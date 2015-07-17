@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+<%= stylesheet_link_tag "shadowbox" %>
 <html>
   <head>
     <title><%= yield(:title) %> | Our own application :3</title>
   </head>
   <body>
-    <h1>This is a placeholder header</h1>
-    <p>
-      This is a placeholder text
-    </p>
+    <div class="semilayer">
+      <h1>Я люблю тебя, котёночек :З </h1>
+    </div>
+    <%= image_tag("cog.png", size: "100x100", alt: "In progress...") %>
   </body>
 </html>
