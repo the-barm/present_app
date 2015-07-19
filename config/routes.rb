@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pictures/new'
+
   get 'static_pages/home'
 
   get 'static_pages/about'
@@ -9,7 +11,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root             'static_pages#home'
   get 'about'   => 'static_pages#about'
-
+  get "pictures/show_image" => "pictures#show_image"
+  resources :pictures
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

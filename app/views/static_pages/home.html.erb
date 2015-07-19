@@ -9,9 +9,7 @@
       <h1>Я люблю тебя, котёночек :З </h1>
     </div>
     <div id="img-hover">
-      <%=image_tag Dir.new(Rails.root.to_s + 
-        "/app/assets/images/to_show").to_a.select{|f|    
-        f.downcase.match(/\.jpg|\.jpeg|\.png/) }.sample %>
+      <%=image_tag @pictures.sample.data.url %>
     </div>
   </body>
 </html>

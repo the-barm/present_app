@@ -1,0 +1,10 @@
+<% provide(:title, 'All pictures') %>
+<h1>All pictures</h1>
+
+<ul id="pictures">
+  <% @pictures.each do |picture| %>
+    <li>
+      <%= image_tag(picture.data.url) %>
+    </li>
+  <% end %>
+</ul>
