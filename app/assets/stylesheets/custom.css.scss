@@ -12,12 +12,6 @@
         src: url(/assets/Arkhip_font.otf) format("truetype");
 }
 
-#img.source-image {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 header {
   font-family: "Arkhip_font";
@@ -39,7 +33,7 @@ body {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: grey;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -104,11 +98,39 @@ p {
 
 /* белый полупрозрачный фон */
 
-.semilayer {
+#semilayer {
+    text-align: center;
     padding: 5px; /* Поля вокруг текста */  
     background: #fff; /* Цвет фона */
     margin: 0 auto; /* Выравниваем слой по центру */
     width: 80%; /* Ширина слоя */
     opacity: 0.55; /* Значение прозрачности */
     filter: alpha(Opacity=55); /* Прозрачность в IE */
+}
+
+// hover image
+
+#img-hover {
+    text-align: center;
+    line-height: 300px;
+    display: block;
+    padding: 5px; /* Поля вокруг текста */  
+    background: rgba(0, 0, 0, 0.7); /* Цвет фона */
+    margin: 0 auto; /* Выравниваем слой по центру */
+    opacity: 0; /* Значение прозрачности */
+    filter: alpha(Opacity=0); /* Прозрачность в IE */
+    height: 380px; 
+    width: 500px; 
+}
+
+#semilayer:hover + #img-hover {
+    opacity: 0.9;
+}
+
+#img-hover img
+{
+  max-width: 100%; 
+  max-height: 100%;
+  margin: auto;
+  vertical-align: middle;
 }
