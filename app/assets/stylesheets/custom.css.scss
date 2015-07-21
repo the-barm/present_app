@@ -115,6 +115,20 @@ p {
 
 }
 
+#semilayer-text {
+    font-family: "Arkhip_font";
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    width: 50%; 
+    padding: 5px;   
+    margin: 0 auto;
+    background: #fff; 
+    opacity: 0.55; 
+    filter: alpha(Opacity=55); /* Прозрачность в IE */
+    text-align: center;
+    padding: 5px;   
+}
+
 // hover image
 
 #img-hover {
