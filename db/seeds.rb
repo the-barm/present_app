@@ -9,5 +9,7 @@
 
 
 (1..7).each do |n|
-  Picture.create!(data: File.open(File.join(Rails.root, "/app/assets/images/#{n}.jpg")))
+  object = s3.buckets['ninabucket'].objects["test/#{n}.jpg"]
+  
+  Picture.create!(data: File.open(object.url_for(:get, {:secure => true }).to_s))
 end
