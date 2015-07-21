@@ -7,6 +7,9 @@
   <body>
     <div id="semilayer">
       <h1>Я люблю тебя, котёночек :З </h1>
+      <div id = "semilayer-link">
+        <%= link_to 'Ещё фоточек :)', '/update', remote: true %>
+      </div>
     </div>
     <div id="img-hover">
       <%=image_tag @pictures.sample.data.url %>
