@@ -4,12 +4,12 @@
 
 @font-face {
         font-family: "christmas_scriptc";
-        src: url(/assets/christmas_scriptc.ttf) format("truetype");
+        src: font-url("christmas_scriptc.ttf") format("truetype");
 }
     
 @font-face {
         font-family: "Arkhip_font";
-        src: url(/assets/Arkhip_font.otf) format("truetype");
+        src: font-url("Arkhip_font.otf") format("truetype");
 }
 
 
