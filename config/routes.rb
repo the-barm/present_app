@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'pictures/new'
   get '/update' => 'static_pages#update'
   # The priority is based upon order of creation: first created -> highest priority.
