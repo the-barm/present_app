@@ -11,3 +11,9 @@
 (1..7).each do |n|
   Picture.create!(data: File.open(File.join(Rails.root, "/app/assets/images/#{n}.jpg")))
 end
+
+User.create!(name:  "ExampleUser",
+             email: "example@exmpl.org",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin: true)
