@@ -1,0 +1,16 @@
+<% provide(:title, "Log in") %>
+
+<div class="semilayer-text">
+    <h1>Log in</h1>
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+</div>
+<div id="login-button">
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+</div>

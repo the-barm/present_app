@@ -74,8 +74,7 @@ h1 {
   text-align: center;
   color: #000;
   font-weight: bold;
-  
-
+  font-family: "christmas_scriptc";
 }
 
 h2 {
@@ -115,7 +114,7 @@ p {
 
 }
 
-#semilayer-text {
+.semilayer-text {
     font-family: "Arkhip_font";
     font-size: 1.2em;
     letter-spacing: -1px;
@@ -127,6 +126,19 @@ p {
     filter: alpha(Opacity=55); /* Прозрачность в IE */
     text-align: center;
     padding: 5px;   
+}
+
+#login-button {
+    font-family: "Arkhip_font";
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    width: 50%; 
+    padding: 5px;   
+    margin: 0 auto;
+    text-align: center;    
+    background-color:rgba(255,255,255,0.55);
+    padding: 5px;   
+  
 }
 
 // hover image
