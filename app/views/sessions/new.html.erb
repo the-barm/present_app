@@ -1,16 +1,20 @@
 <% provide(:title, "Log in") %>
 
-<div class="semilayer-text">
-    <h1>Log in</h1>
+
     <%= form_for(:session, url: login_path) do |f| %>
+      <div class="semilayer-text">
+        <h1>Log in</h1>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-</div>
-<div id="login-button">
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-</div>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span>Remember me on this computer</span>
+        <% end %>
+      </div>
+      <div id="lgn-button">
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      </div>
+<% end %>
