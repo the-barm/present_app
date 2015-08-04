@@ -78,14 +78,15 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 5em;
   letter-spacing: 0px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
   color: #000;
   font-weight: bold;
-  -webkit-text-stroke: 1px white;
+  font-family: "Arkhip_font";
+
 
 }
 
@@ -170,7 +171,7 @@ p {
 
 .flash-messages {
   margin: auto;
-  font-family: Arkhip_font;
+  font-family: "Arkhip_font";
   width: 50%;
   text-align: center;
 }

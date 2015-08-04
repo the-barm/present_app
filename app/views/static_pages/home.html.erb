@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<%= stylesheet_link_tag "shadowbox" %>
-<html>
-  <head>
-    <title><%= yield(:title) %> | Our own application :3</title>
-  </head>
-  <body>
-    <div id="semilayer">
-      <h1>Я люблю тебя, котёночек :З </h1>
-      <div id = "semilayer-link">
-        <%= link_to 'Ещё фоточек :)', '/update', remote: true %>
-      </div>
-    </div>
-    <div id="img-hover">
-      <%=image_tag @pictures.sample.data.url %>
-    </div>
-  </body>
-</html>
+<% if logged_in? %>
+      <%= render 'static_pages/user_is_logged_in' %>
+<% else %>
+      <%= render 'static_pages/user_is_not_logged_in' %>
+<% end %>
+    
