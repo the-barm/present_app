@@ -9,7 +9,13 @@
 
 
 (1..7).each do |n|
-  Picture.create!(data: File.open(File.join(Rails.root, "/app/assets/images/#{n}.jpg")))
+  Picture.create!(data: File.open(File.join(Rails.root, 
+                                  "/app/assets/images/#{n}.jpg")))
+end
+
+(1..10).each do |n|
+  Picture.create!(data: File.open(File.join(Rails.root, 
+                                  "/app/assets/images/kitten#{n}.jpg")))
 end
 
 User.create!(name:  "ExampleUser",
