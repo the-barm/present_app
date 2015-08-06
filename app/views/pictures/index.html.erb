@@ -1,4 +1,7 @@
 <% provide(:title, 'All pictures') %>
+
+<% if logged_in? %>
+
 <h1>All pictures</h1>
 
 <ul id="pictures">
@@ -8,3 +11,5 @@
     </li>
   <% end %>
 </ul>
+
+<% end %>
