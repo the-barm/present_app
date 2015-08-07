@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @upload = Upload.new
+    @uploads = Upload.all
   end
   
   def edit

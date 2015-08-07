@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804143048) do
+ActiveRecord::Schema.define(version: 20150807193229) do
 
   create_table "pictures", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20150804143048) do
     t.string   "data_content_type"
     t.integer  "data_file_size"
     t.datetime "data_updated_at"
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,7 @@
+<%= form_for(@upload, html: { multipart: true }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+  <span class="picture">
+    <%= f.file_field :content, accept: 'image/jpeg,image/gif,image/png'%>
+  </span>
+<% end %>
