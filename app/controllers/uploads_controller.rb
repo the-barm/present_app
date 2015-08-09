@@ -5,7 +5,7 @@ class UploadsController < ApplicationController
     @upload = Upload.new(upload_params)
     if @upload.save
       flash[:success] = "Uploaded!"
-      render 'users/show'
+      redirect_to current_user
     else
       render 'static_pages/home'
     end
