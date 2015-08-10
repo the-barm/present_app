@@ -1,5 +1,7 @@
 <ul id="pictures">
-    <li>
+    <li id="upload-<%= upload.id %>">
       <%= image_tag(upload.content.url) %>
+      <%= link_to "delete", upload, method: :delete,
+                                       data: { confirm: "You sure?" } %>
     </li>
 </ul>

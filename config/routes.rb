@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   resources :pictures
   resources :users
-  resources :uploads,          only: [:create]
+  resources :uploads,          only: [:create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
