@@ -2,9 +2,12 @@ class StaticPagesController < ApplicationController
   
   def home
     if logged_in?
-      @pictures = Picture.where("data_file_name NOT LIKE ?" , "kitten%")
+      @uploads = Upload.where("private = 't'")
     else
-      @pictures = Picture.where("data_file_name LIKE ?" , "kitten%")
+      @uploads = Upload.where("private = 'f'")
+    end
+    if @uploads.first.nil?
+      @uploads = nil
     end
   end
 
@@ -13,11 +16,9 @@ class StaticPagesController < ApplicationController
   
   def update
     if logged_in? 
-      @picture = Picture.where("data_file_name NOT LIKE ?" , 
-                               "kitten%").order("RANDOM()").first
+      @upload = Upload.where("private = 't'").order("RANDOM()").first
     else
-      @picture = Picture.where("data_file_name LIKE ?" , 
-                               "kitten%").order("RANDOM()").first
+      @upload = Upload.where("private = 'f'").order("RANDOM()").first
     end
     respond_to do |format|
       format.js
