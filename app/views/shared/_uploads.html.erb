@@ -1,11 +1,13 @@
 <%= form_for(@upload, html: { multipart: true }) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+  <div id="lgn-button">
     <%= f.submit "Upload", class: "btn btn-primary" %>
-  <span>
+  </div>
+  <div class="semilayer-text">
+    <%= render 'shared/error_messages', object: f.object %>
     <%= f.file_field :content, accept: 'image/jpeg,image/gif,image/png'%>
-  </span>
     <%= f.label :private, class: "checkbox inline" do %>
         <%= f.check_box :private %>
         <span>Make file private</span>
     <% end %>
+  </div>
 <% end %>

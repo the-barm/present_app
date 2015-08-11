@@ -1,1 +1,1 @@
-This is just a simple application for my girlfriend's birthday
+This is just a simple application for my personal use
