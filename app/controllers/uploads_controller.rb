@@ -8,14 +8,14 @@ class UploadsController < ApplicationController
     end
     @upload.save ? flash[:success] = "Uploaded!" 
                  : flash[:danger] = "Upload failed!"
-    redirect_to current_user
+    redirect_to request.referrer || uploads_path
   end
   
   def destroy
     @upload = Upload.find_by(id: params[:id])
     @upload.destroy
     flash[:success] = "File deleted"
-    redirect_to request.referrer || current_user
+    redirect_to request.referrer || uploads_path
   end
   
   def index
