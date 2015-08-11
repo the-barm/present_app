@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy, :index]
   
   def create
     @upload = Upload.new(upload_params)
@@ -16,6 +16,11 @@ class UploadsController < ApplicationController
     @upload.destroy
     flash[:success] = "File deleted"
     redirect_to request.referrer || current_user
+  end
+  
+  def index
+    @upload = Upload.new
+    @uploads = Upload.all
   end
   
   
