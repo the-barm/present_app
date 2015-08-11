@@ -1,5 +1,6 @@
 class Upload < ActiveRecord::Base
     mount_uploader :content, UploadUploader
+    validates :content,  presence: true
     validate  :content_size
 
     private
