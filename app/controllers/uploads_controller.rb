@@ -23,6 +23,18 @@ class UploadsController < ApplicationController
     @uploads = Upload.all
   end
   
+  def update
+    @upload = Upload.find_by(id: params[:id])
+    if @upload.private
+      @upload.update_attribute(:private, false)
+    else
+      @upload.update_attribute(:private, true)
+    end
+    @upload.save
+    flash[:success] = "Attribute changed"
+    redirect_to request.referrer || uploads_path
+  end
+  
   
   private
 

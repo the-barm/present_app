@@ -1,7 +1,11 @@
 <ul class="list-unstyled" id="pictures">
     <li id="upload-<%= upload.id %>">
       <% if upload.private %>
-        Private image
+        Private image |
+        <%= link_to "make public", upload, method: :patch %>
+      <% else %>
+        Public image |
+        <%= link_to "make private", upload, method: :patch %>
       <% end %>
       <%= image_tag(upload.content.url) %>
       <%= link_to "delete", upload, method: :delete,

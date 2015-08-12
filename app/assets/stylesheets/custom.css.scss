@@ -129,6 +129,7 @@ p {
     padding: 5px;   
 }
 
+
 #lgn-button {
     font-family: "Arkhip_font";
     font-size: 1.2em;
@@ -184,7 +185,11 @@ p {
 
 #pictures img {
   object-fit: scale-down;
-  width: 300px;
+  width: 295px;
   height: 250px;
+}
+
+#pictures li {
+  border: 2px solid #000;
 }
 

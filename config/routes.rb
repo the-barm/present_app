@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root             'static_pages#home'
   get 'about'   => 'static_pages#about'
-  resources :pictures
   resources :users
-  resources :uploads,          only: [:create, :destroy, :index]
+  resources :uploads, only: [:create, :destroy, :index, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
