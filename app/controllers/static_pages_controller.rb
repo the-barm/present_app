@@ -14,6 +14,9 @@ class StaticPagesController < ApplicationController
   def about
   end
   
+  def letters
+  end
+  
   def update
     if logged_in? 
       @upload = Upload.where("private = 't'").order("RANDOM()").first
