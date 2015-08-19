@@ -1,6 +1,6 @@
 var fill_and_animate = function(phrase) {
   for (var i = 0; i < phrase.length; i++) {
-        $('div#lgn-button').append($('<div class = "letters"/>').text(phrase[i]));
+        $('div#letters-background').append($('<div class = "letters"/>').text(phrase[i]));
   };
   $('div.letters').mouseenter(function() {
        $(this).animate({
