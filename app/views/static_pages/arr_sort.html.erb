@@ -1,6 +1,11 @@
 <% provide(:title, "Array sorting") %>
 <div id = "array-background">
+    <div class="btn-group">
     <%= button_to 'Press to get new array', '/sort', 
-        :class => "btn btn-primary", :method => :get, remote: true %>
+        :class => "btn btn-primary btn-block", :method => :get, remote: true %>
+    <br/>
+    <%= button_to 'And sort it!', '/sort', 
+        :class => "btn btn-primary disabled btn-block", :method => :get, remote: true %>
+    </div>
     <br/>
 </div>

@@ -5,5 +5,6 @@ $(function() {
     $('div#array-background').append($('<div/>', {id: 'color-'+i, class: 'colors'}));
     $('#color-'+i).css("background-color", state[i-1]);
   };
+  $('.disabled').removeClass('disabled');
 });
 
