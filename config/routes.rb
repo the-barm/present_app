@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   get '/update' => 'static_pages#update'
+  get '/sort' => 'static_pages#sort'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'letters' => 'static_pages#letters'
+  get 'array_sorting' => 'static_pages#arr_sort'
   # You can have the root of your site routed with "root"
   root             'static_pages#home'
   get 'about'   => 'static_pages#about'
