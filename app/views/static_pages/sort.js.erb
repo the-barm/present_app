@@ -1,10 +1,35 @@
+var animate_swap = function(i, elem) {
+    $('#color-'+(i+1))
+      .delay(300)
+      .queue(function (next) { 
+        $(this).css("background-color", '#'+elem);
+        next(); 
+        });
+};
+
+
 $(function() {
-  $('div.colors').remove();
-  var state = <%=raw @colors%>;
-  for (var i = 1; i < <%=@colors.length %>+1; i++) {
-    $('div#array-background').append($('<div/>', {id: 'color-'+i, class: 'colors'}));
-    $('#color-'+i).css("background-color", state[i-1]);
+  var colors = [];
+  for (var i = 0; i < 9; i++) {
+    colors[i] = $('#color-'+(i+1)).css("background-color").match(/\d+/g);
+    colors[i] = Number(colors[i][0]).toString(16) + 
+      Number(colors[i][1]).toString(16) + Number(colors[i][2]).toString(16);
+      
   };
-  $('.disabled').removeClass('disabled');
+  var n = colors.length, i = Math.floor(n/2);
+  while (i > 0) { 
+      for (var j = 0; j < n; j++) {
+        var k = j, t = colors[j];
+        while (k >= i && colors[k-i] > t) { 
+          colors[k] = colors[k-i];
+          animate_swap(k, colors[k-i]);
+          k -= i; 
+        }
+        colors[k] = t;
+        animate_swap(k, t);
+      }
+      i = (i==2) ? 1 : Math.floor(i*5/11);
+  }
+  
 });
 

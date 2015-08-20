@@ -20,10 +20,16 @@ class StaticPagesController < ApplicationController
   def arr_sort
   end
   
-  def sort
-    @colors = [ "#000000", "#696969", "#808080", "#A9A9A9", "#C0C0C0", 
-                "#D3D3D3", "#DCDCDC", "#F5F5F5", "#FFFFFF" ]
+  def fill
+    @colors = [ "#000000", "#696969", "#808080", "#a9a9a9", "#c0c0c0", 
+                "#d3d3d3", "#dcdcdc", "#f5f5f5", "#ffffff" ]
     @colors.shuffle!
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  def sort
     respond_to do |format|
       format.js
     end
