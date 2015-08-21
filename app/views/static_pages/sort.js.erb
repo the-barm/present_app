@@ -1,8 +1,12 @@
-var animate_swap = function(i, elem) {
+var animate_swap = function(i, j, elem_1, elem_2) {
     $('#color-'+(i+1))
-      .delay(300)
       .queue(function (next) { 
-        $(this).css("background-color", '#'+elem);
+        $(this).slideUp(300).delay(300).css("background-color", '#'+elem_1).slideDown(300);
+        next(); 
+        });
+    $('#color-'+(j+1))
+      .queue(function (next) { 
+        $(this).slideUp(300).delay(300).css("background-color", '#'+elem_2).slideDown(300);
         next(); 
         });
 };
@@ -16,20 +20,18 @@ $(function() {
       Number(colors[i][1]).toString(16) + Number(colors[i][2]).toString(16);
       
   };
-  var n = colors.length, i = Math.floor(n/2);
-  while (i > 0) { 
-      for (var j = 0; j < n; j++) {
-        var k = j, t = colors[j];
-        while (k >= i && colors[k-i] > t) { 
-          colors[k] = colors[k-i];
-          animate_swap(k, colors[k-i]);
-          k -= i; 
+  var tmp;
+  for (var i = colors.length - 1; i > 0; i--) {
+        for (var j = 0; j < i; j++) {
+            if (colors[j] > colors[j+1]) {
+                tmp = colors[j];
+                colors[j] = colors[j+1];
+                colors[j+1] = tmp;
+                setTimeout(animate_swap(j, j+1, colors[j], tmp), 1800);
+            }
         }
-        colors[k] = t;
-        animate_swap(k, t);
-      }
-      i = (i==2) ? 1 : Math.floor(i*5/11);
-  }
+    }
+    
   
 });
 
