@@ -1,14 +1,47 @@
-var animate_swap = function(i, j, elem_1, elem_2) {
+var animate_swap = function(i, j, elem_1, elem_2, delay) {
     $('#color-'+(i+1))
       .queue(function (next) { 
-        $(this).slideUp(300).delay(300).css("background-color", '#'+elem_1).slideDown(300);
+        $(this)
+          .slideUp(delay)
+          .css("background-color", '#'+elem_1)
+          .slideDown(delay);
         next(); 
         });
     $('#color-'+(j+1))
       .queue(function (next) { 
-        $(this).slideUp(300).delay(300).css("background-color", '#'+elem_2).slideDown(300);
+        $(this)
+          .slideUp(delay)
+          .css("background-color", '#'+elem_2)
+          .slideDown(delay);
         next(); 
         });
+};
+
+
+function sortLoop(colors, j, i, delay) {
+  setTimeout(function() {
+    if (colors[j] > colors[j+1]) {
+      var tmp = colors[j];
+      colors[j] = colors[j+1];
+      colors[j+1] = tmp;
+      animate_swap(j, j+1, colors[j], tmp, delay);
+    }
+    j++;
+    if (j < i) { 
+      sortLoop(colors, j, i, delay);
+    }
+  }, ((colors[j] > colors[j+1]) ? (delay*2) : 0));
+};
+
+function firstSortLoop(colors, i, delay) {
+  setTimeout(function() {
+    sortLoop(colors, 0, i, delay);
+    i--;
+    if (i > 0) {
+      firstSortLoop(colors, i, delay);
+    }
+    else $('.btn').removeClass('disabled');
+  }, ((i < colors.length - 1) ? (delay*2*(i+1)) : 0));
 };
 
 
@@ -17,21 +50,11 @@ $(function() {
   for (var i = 0; i < 9; i++) {
     colors[i] = $('#color-'+(i+1)).css("background-color").match(/\d+/g);
     colors[i] = Number(colors[i][0]).toString(16) + 
-      Number(colors[i][1]).toString(16) + Number(colors[i][2]).toString(16);
+                Number(colors[i][1]).toString(16) + 
+                Number(colors[i][2]).toString(16);
       
   };
-  var tmp;
-  for (var i = colors.length - 1; i > 0; i--) {
-        for (var j = 0; j < i; j++) {
-            if (colors[j] > colors[j+1]) {
-                tmp = colors[j];
-                colors[j] = colors[j+1];
-                colors[j+1] = tmp;
-                setTimeout(animate_swap(j, j+1, colors[j], tmp), 1800);
-            }
-        }
-    }
-    
-  
+  $('.btn').addClass('disabled');
+  firstSortLoop(colors, colors.length - 1, 300);
 });
 
