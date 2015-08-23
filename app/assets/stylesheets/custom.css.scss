@@ -3,13 +3,13 @@
 
 
 @font-face {
-        font-family: "christmas_scriptc";
-        src: font-url("christmas_scriptc.ttf") format("truetype");
+  font-family: "christmas_scriptc";
+  src: font-url("christmas_scriptc.ttf") format("truetype");
 }
     
 @font-face {
-        font-family: "Arkhip_font";
-        src: font-url("Arkhip_font.otf") format("truetype");
+  font-family: "Arkhip_font";
+  src: font-url("Arkhip_font.otf") format("truetype");
 }
 
 
@@ -99,75 +99,74 @@ p {
 // белый полупрозрачный фон
 
 #semilayer {
-    text-align: center;
-    padding: 5px;   
-    background: #fff; 
-    margin: 0 auto; 
-    width: 80%; 
-    opacity: 0.55; 
-    filter: alpha(Opacity=55); /* Прозрачность в IE */
+  text-align: center;
+  padding: 5px;   
+  background: #fff; 
+  margin: 0 auto; 
+  width: 80%; 
+  opacity: 0.55; 
+  filter: alpha(Opacity=55); /* Прозрачность в IE */
 }
 
 #semilayer-link {
-    font-family: "Arkhip_font";
-    font-size: 1.2em;
-    letter-spacing: -1px;
+  font-family: "Arkhip_font";
+  font-size: 1.2em;
+  letter-spacing: -1px;
 
 }
 
 .semilayer-text {
-    font-family: "Arkhip_font";
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    width: 50%; 
-    padding: 5px;   
-    margin: 0 auto;
-    background: #fff; 
-    opacity: 0.55; 
-    filter: alpha(Opacity=55); /* Прозрачность в IE */
-    text-align: center;
-    padding: 5px;   
+  font-family: "Arkhip_font";
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  width: 50%; 
+  padding: 5px;   
+  margin: 0 auto;
+  background: #fff; 
+  opacity: 0.55; 
+  filter: alpha(Opacity=55); /* Прозрачность в IE */
+  text-align: center;
+  padding: 5px;   
 }
 
 
 #lgn-button {
-    font-family: "Arkhip_font";
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    width: 50%; 
-    padding: 5px;   
-    margin: 0 auto;
-    text-align: center;    
-    background-color:rgba(255,255,255,0.55);
+  font-family: "Arkhip_font";
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  width: 50%; 
+  padding: 5px;   
+  margin: 0 auto;
+  text-align: center;    
+  background-color:rgba(255,255,255,0.55);
 
 }
 
 #letters-background {
-    font-family: "Arkhip_font";
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    width: 50%; 
-    margin: 0 auto;
-    text-align: center;    
-    background-color:rgba(255,255,255,0.55);
-    padding: 80px;   
-  
+  font-family: "Arkhip_font";
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  width: 50%; 
+  margin: 0 auto;
+  text-align: center;    
+  background-color:rgba(255,255,255,0.55);
+  padding: 80px;   
 }
 
 
 // hover image
 
 #img-hover {
-    text-align: center;
-    line-height: 300px;
-    display: block;
-    padding: 5px;  
-    background: rgba(0, 0, 0, 0.7); 
-    margin: 0 auto; 
-    opacity: 0; 
-    filter: alpha(Opacity=0); /* Прозрачность в IE */
-    height: 380px; 
-    width: 500px; 
+  text-align: center;
+  line-height: 300px;
+  display: block;
+  padding: 5px;  
+  background: rgba(0, 0, 0, 0.7); 
+  margin: 0 auto; 
+  opacity: 0; 
+  filter: alpha(Opacity=0); /* Прозрачность в IE */
+  height: 380px; 
+  width: 500px; 
 }
 
 #semilayer:hover + #img-hover {

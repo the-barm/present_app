@@ -1,20 +1,20 @@
 var animate_swap = function(i, j, elem_1, elem_2, delay) {
-    $('#color-'+(i+1))
-      .queue(function (next) { 
-        $(this)
-          .slideUp(delay)
-          .css("background-color", '#'+elem_1)
-          .slideDown(delay);
-        next(); 
-        });
-    $('#color-'+(j+1))
-      .queue(function (next) { 
-        $(this)
-          .slideUp(delay)
-          .css("background-color", '#'+elem_2)
-          .slideDown(delay);
-        next(); 
-        });
+  $('#color-'+(i+1))
+    .queue(function (next) { 
+      $(this)
+        .slideUp(delay)
+        .css("background-color", '#'+elem_1)
+        .slideDown(delay);
+      next(); 
+    });
+  $('#color-'+(j+1))
+    .queue(function (next) { 
+      $(this)
+        .slideUp(delay)
+        .css("background-color", '#'+elem_2)
+        .slideDown(delay);
+      next(); 
+    });
 };
 
 
